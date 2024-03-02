@@ -8,20 +8,13 @@ const Index = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const toast = useToast();
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    // Placeholder for actual login API call
-    const response = await fetch("https://backengine-g9e7.fly.dev/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    const hardcodedEmail = "testuser@example.com";
+    const hardcodedPassword = "password123";
 
-    if (response.ok) {
-      const data = await response.json();
-      localStorage.setItem("accessToken", data.accessToken);
+    if (email === hardcodedEmail && password === hardcodedPassword) {
+      localStorage.setItem("accessToken", "dummy-access-token");
       setIsLoggedIn(true);
       toast({
         title: "Login successful!",
