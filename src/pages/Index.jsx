@@ -10,27 +10,14 @@ const Index = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const hardcodedEmail = "testuser@example.com";
-    const hardcodedPassword = "password123";
-
-    if (email === hardcodedEmail && password === hardcodedPassword) {
-      localStorage.setItem("accessToken", "dummy-access-token");
-      setIsLoggedIn(true);
-      toast({
-        title: "Login successful!",
-        status: "success",
-        duration: 9000,
-        isClosable: true,
-      });
-    } else {
-      toast({
-        title: "Login failed!",
-        description: "Invalid email or password.",
-        status: "error",
-        duration: 9000,
-        isClosable: true,
-      });
-    }
+    localStorage.setItem("accessToken", "dummy-access-token");
+    setIsLoggedIn(true);
+    toast({
+      title: "Login successful!",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
   };
 
   const handleBuyNFT = () => {
